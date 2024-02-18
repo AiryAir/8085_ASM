@@ -24,30 +24,30 @@ The result of the subtraction is stored as remainder.
 
 # Explanation
 
-\# ORG 2000H	 // tells the assembler where the program resides in the memory
-\# BEGIN 2000H   // begins code from the given memory location
+	\# ORG 2000H	 // tells the assembler where the program resides in the memory
+	\# BEGIN 2000H   // begins code from the given memory location
 
-      LHLD 2501	// Load data from given location to HL pair registers for dividend
-      LDA 2501	// Load data for accumulator to get divisor from 2501
-      STA 5250	// Store accumulator data in memory location 5250
-	  LDA 2503	// Load data for accumulator from 2503
-      STA 5251	// Store accumulator data in memory location 5251
-      MOV B,A	// Move data between registers A and B
-      MVI C,08	// move data “08” immediately to register C
+		LHLD 2501	// Load data from given location to HL pair registers for dividend
+		LDA 2501	// Load data for accumulator to get divisor from 2501
+		STA 5250	// Store accumulator data in memory location 5250
+		  LDA 2503	// Load data for accumulator from 2503
+		STA 5251	// Store accumulator data in memory location 5251
+		MOV B,A	// Move data between registers A and B
+		MVI C,08	// move data “08” immediately to register C
 
-LOOP:       
-       DAD H     // double add data in H
-       MOV A,H   // move data from H to A
-       SUB B     // subtract B from accumulator
-       JC AHEAD  // conditional jump: jump if carry
-       MOV H,A   // move data from A to H
-       INR L     // increment by 1 in L
-
-AHEAD:       
-       DCR C	    // decrement value in C
-       JNZ LOOP	    // conditional jump: jump if not zero; jump to “LOOP”
-       SHLD 5252	// store data in HL Pair in memory location 5252
-       HLT		    // Halt/Terminate the program
-
-\# ORG 2501H		// Origin of data to be given to location 2501
-\# DB 9BH,00H,1AH	// LSB OF DIVIDEND, MSB OF DIVIDEND, DIVISOR
+	LOOP:       
+	       DAD H     // double add data in H
+	       MOV A,H   // move data from H to A
+	       SUB B     // subtract B from accumulator
+	       JC AHEAD  // conditional jump: jump if carry
+	       MOV H,A   // move data from A to H
+	       INR L     // increment by 1 in L
+	
+	AHEAD:       
+	       DCR C	    // decrement value in C
+	       JNZ LOOP	    // conditional jump: jump if not zero; jump to “LOOP”
+	       SHLD 5252	// store data in HL Pair in memory location 5252
+	       HLT		    // Halt/Terminate the program
+	
+	\# ORG 2501H		// Origin of data to be given to location 2501
+	\# DB 9BH,00H,1AH	// LSB OF DIVIDEND, MSB OF DIVIDEND, DIVISOR
