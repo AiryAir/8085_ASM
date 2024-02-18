@@ -5,7 +5,8 @@ Store the quotient at memory location 5252H and remainder at memory location 525
 
 # Program Logic
 DIVIDEND/DIVISOR = QUOTIENT and REMAINDER
-Inputs: Dividend, Divisor 
+
+Inputs: Dividend, Divisor
 Output: Quotient, Remainder
 
 We will have two cases here.
