@@ -7,20 +7,22 @@ Store the quotient at memory location 5252H and remainder at memory location 525
 DIVIDEND/DIVISOR = QUOTIENT and REMAINDER
 
 Inputs: Dividend, Divisor
+
 Output: Quotient, Remainder
 
 We will have two cases here.
 
-## CASE 1: When Divisor > Dividend 
+### CASE 1: When Divisor > Dividend 
 Dividend will be subtracted from divisor. The total count of the number of subtractions will be the quotient till divisor becomes zero or dividend > divisor. 
 When the latter happens, we move on to case 2.
 
-## CASE 2: When Divisor < Dividend
+### CASE 2: When Divisor < Dividend
 The result of the subtraction is stored as remainder.
 
-## Example
+### Example
 
 5/2 | Divisor > Dividend | Remainder = 3 | Quotient = 0; Q++; 1
+
 1/2 | Divisor < Dividend | Remainder = 1 | Quotient = 0; Q++; 2
 
 # Explanation
