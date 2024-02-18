@@ -24,8 +24,8 @@ The result of the subtraction is stored as remainder.
 
 # Explanation
 
-	\# ORG 2000H	 // tells the assembler where the program resides in the memory
-	\# BEGIN 2000H   // begins code from the given memory location
+	# ORG 2000H	 // tells the assembler where the program resides in the memory
+	# BEGIN 2000H   // begins code from the given memory location
 
 		LHLD 2501	// Load data from given location to HL pair registers for dividend
 		LDA 2501	// Load data for accumulator to get divisor from 2501
@@ -49,5 +49,5 @@ The result of the subtraction is stored as remainder.
 	       SHLD 5252	// store data in HL Pair in memory location 5252
 	       HLT		    // Halt/Terminate the program
 	
-	\# ORG 2501H		// Origin of data to be given to location 2501
-	\# DB 9BH,00H,1AH	// LSB OF DIVIDEND, MSB OF DIVIDEND, DIVISOR
+	# ORG 2501H		// Origin of data to be given to location 2501
+	# DB 9BH,00H,1AH	// LSB OF DIVIDEND, MSB OF DIVIDEND, DIVISOR
