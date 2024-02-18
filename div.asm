@@ -1,0 +1,22 @@
+# ORG 2000H
+# BEGIN 2000H
+	   LHLD 2501
+	   LDA 2503
+	   STA 5250
+	   STA 5251
+	   MOV B,A
+	   MVI C,08
+
+LOOP:	   DAD H
+	   MOV A,H
+	   SUB B
+	   JC AHEAD
+	   MOV H,A
+	   INR L
+
+AHEAD:	   DCR C
+	   JNZ LOOP
+	   SHLD 5252
+	   HLT
+# ORG 2501H
+# DB 9BH, 00H, 1AH
